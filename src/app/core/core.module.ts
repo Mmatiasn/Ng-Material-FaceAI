@@ -1,8 +1,11 @@
 import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import { UserPreferenceService } from "./services/user-preference.service";
+import { StoreModule } from "./store/store.module";
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule]
+  imports: [StoreModule],
+  exports: [StoreModule],
+  providers: [UserPreferenceService]
 })
 export class CoreModule {}

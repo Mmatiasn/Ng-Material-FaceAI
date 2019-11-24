@@ -1,4 +1,7 @@
 import { NgModule } from "@angular/core";
+import { RouterModule } from "@angular/router";
+import { LayoutModule } from "@angular/cdk/layout";
+
 // Angular Material Components
 import { MatCheckboxModule } from "@angular/material";
 import { MatButtonModule } from "@angular/material";
@@ -65,7 +68,9 @@ import { MatPaginatorModule } from "@angular/material/paginator";
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    LayoutModule,
+    RouterModule
   ],
   exports: [
     MatCheckboxModule,
@@ -98,7 +103,9 @@ import { MatPaginatorModule } from "@angular/material/paginator";
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    LayoutModule,
+    RouterModule
   ]
 })
 export class AngularMaterialModule {}

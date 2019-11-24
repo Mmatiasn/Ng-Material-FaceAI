@@ -1,25 +1,23 @@
-import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { AngularMaterialModule } from "./Shared/angular-material/angular-material.module";
+
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { SideNavModule } from "./modules/side-nav/side-nav.module";
-import { LayoutModule } from "@angular/cdk/layout";
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
-    SideNavModule,
-    AngularMaterialModule,
-    LayoutModule
+    CommonModule,
+    AppRoutingModule,
+    SideNavModule
   ],
   providers: [],
   bootstrap: [AppComponent],
   exports: [],
-  entryComponents: []
+  entryComponents: [AppComponent]
 })
 export class AppModule {}

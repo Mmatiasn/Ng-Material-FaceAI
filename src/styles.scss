@@ -11,8 +11,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$Ng-Material-FaceAI-primary: mat-palette($mat-indigo);
-$Ng-Material-FaceAI-accent: mat-palette($mat-pink, A200, A100, A400);
+$Ng-Material-FaceAI-primary: mat-palette($mat-blue);
+$Ng-Material-FaceAI-accent: mat-palette($mat-blue, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $Ng-Material-FaceAI-warn: mat-palette($mat-red);
@@ -30,6 +30,7 @@ $Ng-Material-FaceAI-theme: mat-light-theme(
 @include angular-material-theme($Ng-Material-FaceAI-theme);
 
 /* You can add global styles to this file, and also import other style files */
+.router-link-active
 
 html,
 body {
@@ -40,18 +41,43 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.style-success {
+.text-success {
   color: #4caf50;
 }
 
-mat-checkbox.mat-checkbox-success > label.mat-checkbox-layout > div > div.mat-checkbox-background{
-  background-color: #4caf50;
-}
-
-.style-danger {
+.text-danger {
   color: #b00020;
 }
 
-mat-checkbox.mat-checkbox-danger > label.mat-checkbox-layout > div > div.mat-checkbox-frame {
+mat-checkbox.mat-checkbox.mat-checkbox-success
+  > label.mat-checkbox-layout
+  > div
+  > div.mat-checkbox-background {
+  background-color: #4caf50;
+}
+
+mat-checkbox.mat-checkbox.mat-checkbox-danger
+  > label.mat-checkbox-layout
+  > div
+  > div.mat-checkbox-frame {
   border-color: #b00020;
+}
+
+mat-checkbox.mat-checkbox > label > span > span.side-bar-text {
+  position: relative;
+  top: -3px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.utility-headers-align .mat-expansion-panel-header-title,
+.utility-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.utility-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
 }

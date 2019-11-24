@@ -1,0 +1,126 @@
+<mat-card>
+  <mat-card-header>
+    <h1 class="display-block">Home</h1>
+  </mat-card-header>
+
+  <mat-accordion class="utility-headers-align">
+    <mat-expansion-panel
+      [expanded]="step === 0"
+      (opened)="setStep(0)"
+      hideToggle
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Facial tracking with web cam
+        </mat-panel-title>
+        <mat-panel-description>
+          Project tracks your facial expression based on previously trained data
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <button
+        mat-raised-button
+        class="w-100"
+        [color]="'primary'"
+        [routerLink]="['/Dashboard']"
+        routerLinkActive="router-link-active"
+      >
+        See project <mat-icon>perm_camera_mic</mat-icon>
+      </button>
+
+      <mat-action-row>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel
+      [expanded]="step === 1"
+      (opened)="setStep(1)"
+      hideToggle
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Dashboard
+        </mat-panel-title>
+        <mat-panel-description>
+          Dashboard contains general data gathered.
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <button
+        mat-raised-button
+        class="w-100"
+        [color]="'primary'"
+        [routerLink]="['/Dashboard']"
+        routerLinkActive="router-link-active"
+      >
+        See dashboard <mat-icon>dashboard</mat-icon>
+      </button>
+
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel
+      [expanded]="step === 2"
+      (opened)="setStep(2)"
+      hideToggle
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Statistics
+        </mat-panel-title>
+        <mat-panel-description>
+          Statistics gathered from your visit
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <button
+        mat-raised-button
+        class="w-100"
+        [color]="'primary'"
+        [routerLink]="['/Statistics']"
+        routerLinkActive="router-link-active"
+      >
+        See statistics <mat-icon>bar_chart</mat-icon>
+      </button>
+
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel
+      [expanded]="step === 3"
+      (opened)="setStep(3)"
+      hideToggle
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          About Developer
+        </mat-panel-title>
+        <mat-panel-description>
+          Learn more about the eveloper
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <button
+        mat-raised-button
+        class="w-100"
+        [color]="'primary'"
+        [routerLink]="['/AboutMe']"
+        routerLinkActive="router-link-active"
+      >
+        Go to developer profile <mat-icon>account_circle</mat-icon>
+      </button>
+
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">End</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>

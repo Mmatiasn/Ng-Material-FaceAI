@@ -1,16 +1,13 @@
 import { Injectable } from "@angular/core";
-import { Subject } from "rxjs";
-import { Observable } from "rxjs";
+import { ThemeService } from "./theme-service/theme-service";
 
-@Injectable()
+@Injectable({
+  providedIn: "root"
+})
 export class UserPreferenceService {
-  private isDarkTheme = new Subject<boolean>();
+  Theme: ThemeService;
 
-  IsDarkTheme: Observable<boolean> = this.isDarkTheme.asObservable();
-
-  setDarkTheme(isDarkTheme: boolean): void {
-    this.isDarkTheme.next(isDarkTheme);
+  constructor() {
+    this.Theme = new ThemeService();
   }
-
-  constructor() {}
 }

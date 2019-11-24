@@ -1,12 +1,20 @@
 import { TestBed, async } from "@angular/core/testing";
-import { RouterTestingModule } from "@angular/router/testing";
 import { AppComponent } from "./app.component";
+import { AngularMaterialModule } from "./Shared/angular-material/angular-material.module";
+import { SideNavModule } from "./modules/side-nav/side-nav.module";
+import { NoopAnimationsModule } from "@angular/platform-browser/animations";
+import { RouterTestingModule } from "@angular/router/testing";
 
 describe("AppComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [AppComponent]
+      declarations: [AppComponent],
+      imports: [
+        AngularMaterialModule,
+        SideNavModule,
+        NoopAnimationsModule,
+        RouterTestingModule
+      ]
     }).compileComponents();
   }));
 
@@ -20,14 +28,5 @@ describe("AppComponent", () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual("Ng-Material-FaceAI");
-  });
-
-  it("should render title", () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector(".content span").textContent).toContain(
-      "Ng-Material-FaceAI app is running!"
-    );
   });
 });

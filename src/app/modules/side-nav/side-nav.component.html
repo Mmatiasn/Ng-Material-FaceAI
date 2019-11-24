@@ -7,26 +7,91 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false"
   >
-    <mat-toolbar>
+    <mat-toolbar color="primary">
       <mat-checkbox
         #WebCamAccess
         color="primary"
+        class="center-icon-and-text"
         [class.mat-checkbox-danger]="!WebCamAccess.checked"
         [class.mat-checkbox-success]="WebCamAccess.checked"
+        [class.text-danger]="!WebCamAccess.checked"
+        [class.text-success]="WebCamAccess.checked"
       >
-        📷
-        <span
-          [class.style-danger]="!WebCamAccess.checked"
-          [class.style-success]="WebCamAccess.checked"
-        >
+        <span class="side-bar-text">
           {{ WebCamAccess.checked ? "Connected..." : "Disconnected..." }}
         </span>
+        <mat-icon>
+          perm_camera_mic
+        </mat-icon>
       </mat-checkbox>
     </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Home</a>
-      <a mat-list-item href="#">Face AI</a>
-      <a mat-list-item href="#">About</a>
+      <mat-list>
+        <div
+          *ngFor="
+            let menuListItem of [
+              {
+                route: '/',
+                title: 'Home',
+                matIcon: 'home',
+                description: '',
+                menuSectionHeader: 'Home'
+              },
+              {
+                route: '/FaceAI',
+                title: 'Face AI',
+                matIcon: 'aspect_ratio',
+                description: '',
+                menuSectionHeader: ''
+              },
+              {
+                route: '/Dashboard',
+                title: 'Dashboard',
+                matIcon: 'dashboard',
+                description: '',
+                menuSectionHeader: ''
+              },
+              {
+                route: '/Statistics',
+                title: 'Statistics',
+                matIcon: 'bar_chart',
+                description: '',
+                menuSectionHeader: ''
+              },
+              {
+                route: '/About',
+                title: 'About',
+                matIcon: 'account_circle',
+                description: '',
+                menuSectionHeader: 'Other'
+              },
+              {
+                route: '/Privacy',
+                title: 'Privacy Policy',
+                matIcon: 'remove_red_eye',
+                description: '',
+                menuSectionHeader: ''
+              }
+            ]
+          "
+        >
+          <h3 *ngIf="menuListItem.menuSectionHeader" mat-subheader>
+            {{ menuListItem.menuSectionHeader }}
+          </h3>
+          <mat-list-item
+            [routerLink]="[menuListItem.route]"
+            routerLinkActive="router-link-active"
+          >
+            <mat-icon *ngIf="menuListItem.matIcon" mat-list-icon>{{
+              menuListItem.matIcon
+            }}</mat-icon>
+            <h4 mat-line>{{ menuListItem.title || "missing title" }}</h4>
+            <p mat-line *ngIf="menuListItem.description">
+              {{ menuListItem.description }}
+            </p>
+          </mat-list-item>
+        </div>
+      </mat-list>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -43,6 +108,6 @@
       <span>Angular 8 Material Face AI 🤖</span>
     </mat-toolbar>
     <!-- Add Content Here -->
-    <router-outlet></router-outlet>
+    <router-outlet> </router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,14 +1,22 @@
-import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { RouterModule } from "@angular/router";
+
 import { AngularMaterialModule } from "src/app/Shared/angular-material/angular-material.module";
+import { SideNavRoutingModule } from "./side-nav-routing.module";
 import { SideNavComponent } from "./side-nav.component";
-import { LayoutModule } from "@angular/cdk/layout";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   declarations: [SideNavComponent],
-  imports: [CommonModule, AngularMaterialModule, RouterModule, LayoutModule],
+  imports: [
+    BrowserAnimationsModule,
+    CommonModule,
+    AngularMaterialModule,
+    SideNavRoutingModule
+  ],
   exports: [SideNavComponent],
-  entryComponents: [SideNavComponent]
+  providers: [],
+  entryComponents: [SideNavComponent],
+  bootstrap: [SideNavComponent]
 })
 export class SideNavModule {}
