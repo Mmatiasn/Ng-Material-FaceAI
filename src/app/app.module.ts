@@ -1,10 +1,11 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AngularMaterialModule } from "./Shared/angular-material/angular-material.module";
+import { AppComponent } from "./app.component";
+import { AppRoutingModule } from "./app-routing.module";
+import { SideNavModule } from "./modules/side-nav/side-nav.module";
+import { LayoutModule } from "@angular/cdk/layout";
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,9 +13,13 @@ import { AngularMaterialModule } from "./Shared/angular-material/angular-materia
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    SideNavModule,
+    AngularMaterialModule,
+    LayoutModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [],
+  entryComponents: []
 })
 export class AppModule {}

@@ -39,3 +39,19 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.style-success {
+  color: #4caf50;
+}
+
+mat-checkbox.mat-checkbox-success > label.mat-checkbox-layout > div > div.mat-checkbox-background{
+  background-color: #4caf50;
+}
+
+.style-danger {
+  color: #b00020;
+}
+
+mat-checkbox.mat-checkbox-danger > label.mat-checkbox-layout > div > div.mat-checkbox-frame {
+  border-color: #b00020;
+}
